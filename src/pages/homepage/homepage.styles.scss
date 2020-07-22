@@ -1,0 +1,23 @@
+.homepage {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+
+    .site-description {
+        height: 100%;
+        width: 100%;
+        border: 3px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            padding: 5px;
+            margin: 5px 5px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

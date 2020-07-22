@@ -6,6 +6,8 @@ import { createStructuredSelector } from 'reselect';
 import './App.css';
 
 import Header from './components/header/header.jsx';
+import Homepage from './pages/homepage/homepage.jsx';
+import SignInAndSignUpPage from './pages/signinandsignup/signinandsignup.jsx';
 
 
 
@@ -13,12 +15,15 @@ import Header from './components/header/header.jsx';
 const App = () => (
   <div className="App" >
     <Header />
-    {/* <HomePage />
-    <DisplayContentPage />
+    <Switch>
+    <Route exact path='/' component={ Homepage } />
+    <Route exact path='/signin' component={ SignInAndSignUpPage } />
+    {/* <DisplayContentPage />
     <MyProfilePage />
     <SignInAndSignUpPage />
     <ProfilePage />
     <Footer /> */}
+    </Switch>
   </div>
 ); 
 

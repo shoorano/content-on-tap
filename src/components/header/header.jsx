@@ -5,16 +5,22 @@ import { createStructuredSelector } from 'reselect';
 
 import './header.styles.scss';
 
-const currentUser = false;
+let currentUser = false;
+
+//This will work once in redux data flow.
 const auth = {
-    signOut: () => console.log('signOut')
+    signOut: () => {
+        currentUser = !currentUser;
+    }
 }
 
 const Header = () => (
     <div className="header">
-        <Link className="logo-container" to='/'>
-            <img src="https://img.icons8.com/doodle/48/000000/water-tap-.png"/>
-        </Link>
+        <div className="logo-container">
+            <Link className="logo" to='/'>
+                <img src="https://img.icons8.com/doodle/48/000000/water-tap-.png"/>
+            </Link>
+        </div>
         <div className="options">
             <Link className="option" to="/content">
                 CONTENT
