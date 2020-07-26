@@ -3,22 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import { auth } from '../../firebase/firebase.utils.js';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
+
 import './header.styles.scss';
 
-let currentUser = false;
-
-//This will work once in redux data flow.
-const auth = {
-    signOut: () => {
-        currentUser = !currentUser;
-    }
-}
-
-const Header = () => (
+const Header = ({ currentUser }) => (
     <div className="header">
         <div className="logo-container">
             <Link className="logo" to='/'>
-                <img src="https://img.icons8.com/doodle/48/000000/water-tap-.png"/>
+                <img src="https://img.icons8.com/doodle/48/000000/water-tap-.png" alt="tap"/>
             </Link>
         </div>
         <div className="options">
@@ -36,4 +30,8 @@ const Header = () => (
     </div>
 )
 
-export default Header;
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser
+})
+
+export default connect(mapStateToProps)(Header);

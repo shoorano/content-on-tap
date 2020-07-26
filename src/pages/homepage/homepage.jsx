@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 
 import './homepage.styles.scss';
 
@@ -19,8 +17,7 @@ const Homepage = () => (
         </Link>
         <Link className="support-button" to="/signin">
             <button>SUPPORT</button>
-        </Link>
-                
+        </Link>               
         </div>
     </div>
 );
